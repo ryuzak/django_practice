@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clientes</title>
+</head>
+<body>
+	<h1>Formulario de clientes</h1>
+	<form method="POST" action="">
+		{% csrf_token %}
+		<p>{{form.name.label}} : {{form.name}}</p>
+		<p>{{form.age.label}} : {{form.age}}</p>
+		<p>{{form.phone.label}} : {{form.phone}}</p>
+		<p> <a href="{% url 'app:customer_list' %}">Cancelar</a> - <button type="submit">Guardar</button></p>
+	</form>
+</body>
+</html>

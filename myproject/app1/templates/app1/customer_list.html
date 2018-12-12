@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clientes</title>
+</head>
+<body>
+	<h1>Clientes</h1>
+	<a href="{% url 'app:customer_add' %}">Agregar Cliente</a>
+	{% for customer in customers %}
+		<p>{{customer.id}}
+		<a href="{% url 'app:customer_edit' customer.id %}">{{customer.name}}</a>
+		{{customer.age}}
+		<a href="{% url 'app:customer_delete' customer.id%}"> Borrar</a>
+		</p>
+	{% endfor %}
+</body>
+</html>
